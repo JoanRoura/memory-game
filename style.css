@@ -4,3 +4,9 @@
   width: 400px;
   height: 300px;
 }
+
+#vida {
+  position: relative;
+  left: 340px;
+  bottom: 40px;
+}

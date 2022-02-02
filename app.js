@@ -50,7 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
       img: 'images/hotdog.png'
     }
   ]
-
+ for (var i = 0; i < cardArray; i++) {
+  const ferclic = document.addEventListener('clic', )
+ }
+  
+  
   cardArray.sort(() => 0.5 - Math.random())
 
   const grid = document.querySelector('.grid')
@@ -69,17 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
       grid.appendChild(card)
     }
   }
-
+let contador = 4;
   //check for matches
   function checkForMatch() {
     const cards = document.querySelectorAll('img')
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
+    let vides = document.getElementById("vides")
+    
+    
     
     if(optionOneId == optionTwoId) {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('You have clicked the same image!')
+      contador--;
+      vides.innerHTML = contador;
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
       alert('You found a match')
@@ -92,6 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('Sorry, try again')
+      contador--;
+      vides.innerHTML = contador;
+    }
+    if (contador == 0) {
+      alert("Has perdut Joan Roura")
+      contador = 4;
     }
     cardsChosen = []
     cardsChosenId = []
@@ -114,3 +129,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createBoard()
 })
+
+
+
+
+/*function historial() {
+  var histo = document.getElementsByClassName('.historial')
+  for (var i = 0; i < cardsChosen.length; i++) {
+    alert("hola com anem");
+  }
+}
+
+historial();*/
+
+const element = document.getElementsByClassName(".grid");
+
+/*element.onmouseover = function(e) {
+	e.getElementsByClassName(".score").style.fontSize = 30;
+};
+
+element.onmouseout = function(e) {
+	e.getElementsByClassName(".score").style.fontSize = 20;
+};*/
+
+function tamany1() {
+  element.getElementsByClassName('.score').style.fontSize = 30;
+}
+
+function tamany2() {
+  element.getElementsByClassName('.score').style.fontSize = 20;
+}
+
+
+/*function mostarImatge() {
+  var hola = addEventListener('click', imatge)
+  
+}
+
+function imatge() {
+  imatge = cardArray[cardId].img
+    document.getElementById('.grid').innerHTML = imatge;
+}*/
